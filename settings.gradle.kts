@@ -1,4 +1,7 @@
+@file:Suppress("UnstableApiUsage")
+
 pluginManagement {
+    includeBuild("build-logic")
     repositories {
         google {
             content {
@@ -21,4 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Playground"
 include(":app")
- 
+include(":feature:login")
