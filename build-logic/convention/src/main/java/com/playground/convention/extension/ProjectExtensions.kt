@@ -9,3 +9,5 @@ val Project.libs get() = extensionOf(target = this, extensionName = "libs") as L
 
 fun Project.plugins(block: PluginManager.() -> Unit) = pluginManager.block()
 
+fun Project.featureModule(module: String): Project = project(":feature:${parent!!.name}:$module")
+

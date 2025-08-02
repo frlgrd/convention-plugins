@@ -1,4 +1,4 @@
-package com.playground.convention.plugin.foundation
+package com.playground.convention.plugin
 
 import com.android.build.api.dsl.ApplicationExtension
 import com.playground.convention.extension.alias

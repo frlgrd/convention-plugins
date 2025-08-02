@@ -3,6 +3,7 @@ package com.playground.convention.plugin
 import com.playground.convention.extension.alias
 import com.playground.convention.extension.androidTestImplementation
 import com.playground.convention.extension.debugImplementation
+import com.playground.convention.extension.featureModule
 import com.playground.convention.extension.implementation
 import com.playground.convention.extension.libs
 import com.playground.convention.extension.plugins
@@ -18,6 +19,7 @@ class PresentationLayerConventionPlugin : Plugin<Project> {
             alias(libs.plugins.convention.compose)
         }
         dependencies {
+            implementation(featureModule(module = "domain"))
             implementation(libs.bundles.ui.implementations)
             implementation(platform(libs.androidx.compose.bom))
             testImplementation(libs.bundles.test.implementations)

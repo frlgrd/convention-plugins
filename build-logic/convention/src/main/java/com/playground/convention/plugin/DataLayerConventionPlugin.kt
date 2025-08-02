@@ -1,6 +1,7 @@
 package com.playground.convention.plugin
 
 import com.playground.convention.extension.alias
+import com.playground.convention.extension.featureModule
 import com.playground.convention.extension.implementation
 import com.playground.convention.extension.libs
 import com.playground.convention.extension.plugins
@@ -15,6 +16,7 @@ class DataLayerConventionPlugin : Plugin<Project> {
             alias(libs.plugins.convention.library)
         }
         dependencies {
+            implementation(featureModule(module = "domain"))
             implementation(libs.bundles.androidx.implementations)
             testImplementation(libs.bundles.test.implementations)
         }

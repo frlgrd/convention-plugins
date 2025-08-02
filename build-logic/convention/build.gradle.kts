@@ -23,17 +23,7 @@ gradlePlugin {
         register("application") {
             id = libs.plugins.convention.application.get().pluginId
             implementationClass =
-                "com.playground.convention.plugin.foundation.ApplicationConventionPlugin"
-        }
-        register("library") {
-            id = libs.plugins.convention.library.get().pluginId
-            implementationClass =
-                "com.playground.convention.plugin.foundation.LibraryConventionPlugin"
-        }
-        register("compose") {
-            id = libs.plugins.convention.compose.get().pluginId
-            implementationClass =
-                "com.playground.convention.plugin.foundation.ComposeConventionPlugin"
+                "com.playground.convention.plugin.ApplicationConventionPlugin"
         }
         register("dataLayer") {
             id = libs.plugins.convention.data.get().pluginId
@@ -47,6 +37,16 @@ gradlePlugin {
             id = libs.plugins.convention.presentation.get().pluginId
             implementationClass =
                 "com.playground.convention.plugin.PresentationLayerConventionPlugin"
+        }
+        register("library") {
+            id = libs.plugins.convention.library.get().pluginId
+            implementationClass =
+                "com.playground.convention.plugin.foundation.LibraryConventionPlugin"
+        }
+        register("compose") {
+            id = libs.plugins.convention.compose.get().pluginId
+            implementationClass =
+                "com.playground.convention.plugin.foundation.ComposeConventionPlugin"
         }
     }
 }
