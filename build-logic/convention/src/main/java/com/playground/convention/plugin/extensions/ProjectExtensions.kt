@@ -23,7 +23,7 @@ fun Project.plugins(block: PluginManager.() -> Unit) = pluginManager.block()
 fun Project.androidApplication(
     block: ApplicationExtension.() -> Unit
 ) = extensions.configure<ApplicationExtension> {
-    androidApp {
+    internalAndroidApplication {
         compileSdk = 36
         defaultConfig {
             minSdk = 24
@@ -48,26 +48,26 @@ fun Project.androidApplication(
     }
 }
 
-fun Project.configureAndroidLibrary(
+fun Project.androidLibrary(
     block: LibraryExtension.() -> Unit = {}
 ) = extensions.configure<LibraryExtension> {
-    androidLibrary {
+    internalAndroidLibrary {
         compileSdk = 36
         defaultConfig {
             minSdk = 24
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
             consumerProguardFiles("consumer-rules.pro")
         }
-        configureCompileOptions(this@configureAndroidLibrary)
+        configureCompileOptions(this@androidLibrary)
         block()
     }
 }
 
-private fun Project.androidApp(
+private fun Project.internalAndroidApplication(
     action: ApplicationDefaultConfig.() -> Unit
 ) = extensions.getByType(BaseAppModuleExtension::class.java).defaultConfig(action = action)
 
-private fun Project.androidLibrary(
+private fun Project.internalAndroidLibrary(
     action: LibraryDefaultConfig.() -> Unit
 ) = extensions.getByType(LibraryExtension::class.java).defaultConfig(action = action)
 

@@ -1,7 +1,7 @@
 package com.playground.convention.plugin
 
+import com.playground.convention.plugin.extensions.androidLibrary
 import com.playground.convention.plugin.extensions.apply
-import com.playground.convention.plugin.extensions.configureAndroidLibrary
 import com.playground.convention.plugin.extensions.implementation
 import com.playground.convention.plugin.extensions.libs
 import com.playground.convention.plugin.extensions.plugins
@@ -16,7 +16,7 @@ class DomainLayerConventionPlugin : Plugin<Project> {
             apply(libs.plugins.android.library)
             apply(libs.plugins.kotlin.android)
         }
-        configureAndroidLibrary {
+        androidLibrary {
             dependencies {
                 implementation(libs.bundles.domain.implementations)
                 testImplementation(libs.bundles.domain.test.implementations)
