@@ -7,7 +7,6 @@ import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -51,7 +50,6 @@ class AndroidApplicationComposeConventionPlugin : ProjectPlugin {
             composeOptions {
                 kotlinCompilerExtensionVersion = libs.versions.agp.get().toString()
             }
-
             buildTypes {
                 getByName("release") {
                     isMinifyEnabled = false
@@ -61,26 +59,12 @@ class AndroidApplicationComposeConventionPlugin : ProjectPlugin {
                     )
                 }
             }
-            dependencies {
-                implementation(libs.androidx.core.ktx)
-                implementation(libs.androidx.lifecycle.runtime.ktx)
-                implementation(libs.androidx.activity.compose)
-                implementation(platform(libs.androidx.compose.bom))
-                implementation(libs.androidx.ui)
-                implementation(libs.androidx.ui.graphics)
-                implementation(libs.androidx.ui.tooling.preview)
-                implementation(libs.androidx.material3)
-                testImplementation(libs.junit)
-                androidTestImplementation(libs.androidx.junit)
-                androidTestImplementation(libs.androidx.espresso.core)
-                androidTestImplementation(platform(libs.androidx.compose.bom))
-                androidTestImplementation(libs.androidx.ui.test.junit4)
-                debugImplementation(libs.androidx.ui.tooling)
-                debugImplementation(libs.androidx.ui.test.manifest)
-            }
         }
+
         tasks.withType<KotlinCompile>().configureEach {
-            compilerOptions { jvmTarget.set(JvmTarget.JVM_11) }
+            compilerOptions {
+                jvmTarget.set(JvmTarget.JVM_11)
+            }
         }
     }
 
