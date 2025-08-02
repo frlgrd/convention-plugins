@@ -1,7 +1,6 @@
 package com.playground.convention.plugin.foundation
 
 import com.android.build.api.dsl.ApplicationExtension
-import com.playground.convention.configureComposeOptions
 import com.playground.convention.extensions.alias
 import com.playground.convention.extensions.androidTestImplementation
 import com.playground.convention.extensions.debugImplementation
@@ -45,7 +44,12 @@ class ApplicationConventionPlugin : Plugin<Project> {
                     jvmTarget.set(JvmTarget.JVM_11)
                 }
             }
-            configureComposeOptions(this@configureAndroidApplication)
+            composeOptions {
+                kotlinCompilerExtensionVersion = libs.versions.agp.get().toString()
+            }
+            buildFeatures {
+                compose = true
+            }
             buildTypes {
                 getByName("release") {
                     isMinifyEnabled = false

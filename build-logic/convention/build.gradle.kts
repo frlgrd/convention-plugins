@@ -30,6 +30,11 @@ gradlePlugin {
             implementationClass =
                 "com.playground.convention.plugin.foundation.LibraryConventionPlugin"
         }
+        register("compose") {
+            id = libs.plugins.convention.compose.get().pluginId
+            implementationClass =
+                "com.playground.convention.plugin.foundation.ComposeConventionPlugin"
+        }
         register("dataLayer") {
             id = libs.plugins.convention.data.get().pluginId
             implementationClass = "com.playground.convention.plugin.DataLayerConventionPlugin"
