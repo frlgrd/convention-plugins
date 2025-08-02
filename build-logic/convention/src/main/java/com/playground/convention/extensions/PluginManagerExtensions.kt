@@ -1,4 +1,4 @@
-package com.playground.convention.plugin.extensions
+package com.playground.convention.extensions
 
 import org.gradle.api.plugins.PluginManager
 import org.gradle.api.provider.Provider
