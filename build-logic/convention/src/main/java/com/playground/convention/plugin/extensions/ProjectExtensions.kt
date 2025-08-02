@@ -20,8 +20,8 @@ val Project.libs get() = extensionOf(target = this, extensionName = "libs") as L
 
 fun Project.plugins(block: PluginManager.() -> Unit) = pluginManager.block()
 
-fun Project.configureAndroidApplication(
-    block: ApplicationExtension.() -> Unit = {}
+fun Project.androidApplication(
+    block: ApplicationExtension.() -> Unit
 ) = extensions.configure<ApplicationExtension> {
     androidApp {
         compileSdk = 36
@@ -33,8 +33,8 @@ fun Project.configureAndroidApplication(
             applicationId = "com.playground"
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         }
-        configureCompileOptions(this@configureAndroidApplication)
-        configureComposeOptions(this@configureAndroidApplication)
+        configureCompileOptions(this@androidApplication)
+        configureComposeOptions(this@androidApplication)
         buildTypes {
             getByName("release") {
                 isMinifyEnabled = false
