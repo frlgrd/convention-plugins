@@ -1,5 +1,7 @@
 package com.example.convention
 
+import com.android.build.api.dsl.ApplicationDefaultConfig
+import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -18,4 +20,8 @@ interface ProjectPlugin : Plugin<Project> {
     fun PluginManager.apply(
         plugin: Provider<PluginDependency>
     ) = apply(plugin.get().pluginId)
+
+    fun Project.android(
+        action: ApplicationDefaultConfig.() -> Unit
+    ) = extensions.getByType(BaseAppModuleExtension::class.java).defaultConfig(action = action)
 }
