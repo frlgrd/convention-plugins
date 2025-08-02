@@ -50,8 +50,7 @@ convention-domain = { id = "com.convention.domain" }
 convention-presentation = { id = "com.convention.presentation" }
 
 [bundles]
-#region app
-app-implementations = [
+ui-implementations = [
     "androidx-core-ktx",
     "androidx-lifecycle-runtime-ktx",
     "androidx-activity-compose",
@@ -61,63 +60,20 @@ app-implementations = [
     "androidx-material3",
     "material"
 ]
-app-test-implementations = [
-    "junit",
-]
-app-android-test-implementations = [
+ui-test-implementations = [
     "androidx-junit",
     "androidx-espresso-core",
     "androidx-ui-test-junit4",
     "androidx-runner"
 ]
-app-debug-implementations = [
+debug-implementations = [
     "androidx-ui-tooling",
     "androidx-ui-test-manifest",
 ]
-#endregion
-
-#region data
-data-implementations = [
+test-implementations = [
+    "junit",
+]
+androidx-implementations = [
     "androidx-core-ktx",
     "androidx-appcompat",
 ]
-data-test-implementations = [
-    "junit",
-]
-#endregion
-
-#region domain
-domain-implementations = [
-    "androidx-core-ktx",
-    "androidx-appcompat",
-]
-domain-test-implementations = [
-    "junit",
-]
-#endregion
-
-#region presentation
-presentation-implementations = [
-    "androidx-core-ktx",
-    "androidx-lifecycle-runtime-ktx",
-    "androidx-activity-compose",
-    "androidx-ui",
-    "androidx-ui-graphics",
-    "androidx-ui-tooling-preview",
-    "androidx-material3",
-    "material",
-]
-presentation-android-test-implementations = [
-    "androidx-junit",
-    "androidx-espresso-core",
-    "androidx-ui-test-junit4",
-    "androidx-runner"
-]
-presentation-debug-implementations = [
-    "androidx-ui-tooling",
-    "androidx-ui-test-manifest",
-]
-presentation-test-implementations = [
-    "junit",
-]
-#endregion

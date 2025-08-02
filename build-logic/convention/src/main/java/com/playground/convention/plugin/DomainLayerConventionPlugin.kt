@@ -15,8 +15,8 @@ class DomainLayerConventionPlugin : Plugin<Project> {
             alias(libs.plugins.convention.library)
         }
         dependencies {
-            implementation(libs.bundles.domain.implementations)
-            testImplementation(libs.bundles.domain.test.implementations)
+            implementation(libs.bundles.androidx.implementations)
+            testImplementation(libs.bundles.test.implementations)
         }
     }
 }

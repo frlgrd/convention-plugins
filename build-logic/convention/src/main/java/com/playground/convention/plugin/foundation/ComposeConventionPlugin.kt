@@ -15,7 +15,8 @@ class ComposeConventionPlugin : Plugin<Project> {
         plugins {
             alias(libs.plugins.kotlin.compose)
         }
-        if (extensions.findByType(BaseAppModuleExtension::class.java) != null) {
+        val isApplicationModule = extensions.findByType(BaseAppModuleExtension::class.java) != null
+        if (isApplicationModule) {
             configure<BaseAppModuleExtension> { configureCompose(this@with) }
         } else {
             configure<LibraryExtension> { configureCompose(this@with) }

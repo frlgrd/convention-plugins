@@ -18,12 +18,12 @@ class PresentationLayerConventionPlugin : Plugin<Project> {
             alias(libs.plugins.convention.compose)
         }
         dependencies {
+            implementation(libs.bundles.ui.implementations)
             implementation(platform(libs.androidx.compose.bom))
-            implementation(libs.bundles.presentation.implementations)
-            testImplementation(libs.bundles.presentation.test.implementations)
+            testImplementation(libs.bundles.test.implementations)
+            androidTestImplementation(libs.bundles.ui.test.implementations)
             androidTestImplementation(platform(libs.androidx.compose.bom))
-            androidTestImplementation(libs.bundles.presentation.android.test.implementations)
-            debugImplementation(libs.bundles.presentation.debug.implementations)
+            debugImplementation(libs.bundles.debug.implementations)
         }
     }
 }

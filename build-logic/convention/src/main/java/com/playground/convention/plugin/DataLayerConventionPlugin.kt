@@ -15,8 +15,8 @@ class DataLayerConventionPlugin : Plugin<Project> {
             alias(libs.plugins.convention.library)
         }
         dependencies {
-            implementation(libs.bundles.data.implementations)
-            testImplementation(libs.bundles.data.test.implementations)
+            implementation(libs.bundles.androidx.implementations)
+            testImplementation(libs.bundles.test.implementations)
         }
     }
 }

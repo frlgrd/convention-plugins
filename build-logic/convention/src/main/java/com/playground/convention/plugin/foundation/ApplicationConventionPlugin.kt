@@ -55,12 +55,12 @@ class ApplicationConventionPlugin : Plugin<Project> {
                     }
                 }
                 dependencies {
-                    implementation(libs.bundles.app.implementations)
+                    implementation(libs.bundles.ui.implementations)
                     implementation(platform(libs.androidx.compose.bom))
-                    testImplementation(libs.bundles.app.test.implementations)
-                    androidTestImplementation(libs.bundles.app.android.test.implementations)
+                    testImplementation(libs.bundles.test.implementations)
+                    androidTestImplementation(libs.bundles.ui.test.implementations)
                     androidTestImplementation(platform(libs.androidx.compose.bom))
-                    debugImplementation(libs.bundles.app.debug.implementations)
+                    debugImplementation(libs.bundles.debug.implementations)
                 }
             }
         }
