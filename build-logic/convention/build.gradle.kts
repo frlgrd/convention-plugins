@@ -20,9 +20,9 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        create("androidApplicationCompose") {
-            id = "com.example.convention.application.compose"
-            implementationClass = "com.example.convention.AndroidApplicationComposeConventionPlugin"
+        create("applicationConventionPlugin") {
+            id = libs.plugins.convention.application.get().pluginId
+            implementationClass = "com.example.convention.ApplicationConventionPlugin"
         }
     }
 }
