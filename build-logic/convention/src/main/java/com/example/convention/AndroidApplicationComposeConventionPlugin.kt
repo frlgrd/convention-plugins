@@ -15,15 +15,13 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 class AndroidApplicationComposeConventionPlugin : ProjectPlugin {
     override fun apply(target: Project) {
         with(target) {
-            with(pluginManager) {
-                apply(libs.plugins.android.application.get().pluginId)
-                apply(libs.plugins.kotlin.android.get().pluginId)
-                apply(libs.plugins.kotlin.compose.get().pluginId)
+            plugins {
+                apply(libs.plugins.android.application)
+                apply(libs.plugins.kotlin.android)
+                apply(libs.plugins.kotlin.compose)
             }
-
             extensions.configure<ApplicationExtension> {
                 configureKotlinAndroid(this)
-                defaultConfig.targetSdk = 34
             }
         }
     }
@@ -81,11 +79,8 @@ class AndroidApplicationComposeConventionPlugin : ProjectPlugin {
                 debugImplementation(libs.androidx.ui.test.manifest)
             }
         }
-
         tasks.withType<KotlinCompile>().configureEach {
-            compilerOptions {
-                jvmTarget.set(JvmTarget.JVM_11)
-            }
+            compilerOptions { jvmTarget.set(JvmTarget.JVM_11) }
         }
     }
 
