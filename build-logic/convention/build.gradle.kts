@@ -20,19 +20,19 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        create("applicationConventionPlugin") {
+        register("applicationConventionPlugin") {
             id = libs.plugins.convention.application.get().pluginId
             implementationClass = "com.playground.convention.plugin.ApplicationConventionPlugin"
         }
-        create("dataConventionPlugin") {
+        register("dataConventionPlugin") {
             id = libs.plugins.convention.data.get().pluginId
             implementationClass = "com.playground.convention.plugin.DataLayerConventionPlugin"
         }
-        create("domainConventionPlugin") {
+        register("domainConventionPlugin") {
             id = libs.plugins.convention.domain.get().pluginId
             implementationClass = "com.playground.convention.plugin.DomainLayerConventionPlugin"
         }
-        create("presentationConventionPlugin") {
+        register("presentationConventionPlugin") {
             id = libs.plugins.convention.presentation.get().pluginId
             implementationClass =
                 "com.playground.convention.plugin.PresentationLayerConventionPlugin"
