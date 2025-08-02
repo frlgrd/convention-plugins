@@ -2,7 +2,7 @@ plugins {
     alias(libs.plugins.convention.application)
 }
 android {
-    namespace = "com.example.playground"
+    namespace = "com.playground"
 }
 
 dependencies {

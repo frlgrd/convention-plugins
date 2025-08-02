@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.login.data"
+    namespace = "com.login.data"
     compileSdk = 36
 
     defaultConfig {

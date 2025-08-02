@@ -3,7 +3,7 @@ import org.gradle.kotlin.dsl.support.serviceOf
 
 plugins { `kotlin-dsl` }
 
-group = "com.example.buildlogic"
+group = "com.buildlogic"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
@@ -22,7 +22,7 @@ gradlePlugin {
     plugins {
         create("applicationConventionPlugin") {
             id = libs.plugins.convention.application.get().pluginId
-            implementationClass = "com.example.convention.ApplicationConventionPlugin"
+            implementationClass = "com.playground.convention.plugin.ApplicationConventionPlugin"
         }
     }
 }

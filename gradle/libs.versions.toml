@@ -42,7 +42,7 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
 
 #convention plugins
-convention-application = { id = "com.example.convention.application" }
+convention-application = { id = "com.convention.application" }
 
 [bundles]
 #region app-compose

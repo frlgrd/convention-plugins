@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.login.presention"
+    namespace = "com.login.presention"
     compileSdk = 36
 
     defaultConfig {
