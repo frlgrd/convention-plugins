@@ -57,6 +57,17 @@ fun Project.androidLibrary(
     }
 }
 
+fun CommonExtension<*, *, *, *, *, *>.configureComposeOptions(
+    project: Project
+) = with(project) {
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.agp.get().toString()
+    }
+    buildFeatures {
+        compose = true
+    }
+}
+
 private fun CommonExtension<*, *, *, *, *, *>.configureCompileOptions(
     project: Project
 ) = with(project) {
@@ -68,16 +79,5 @@ private fun CommonExtension<*, *, *, *, *, *>.configureCompileOptions(
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
-    }
-}
-
-fun CommonExtension<*, *, *, *, *, *>.configureComposeOptions(
-    project: Project
-) = with(project) {
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.agp.get().toString()
-    }
-    buildFeatures {
-        compose = true
     }
 }
