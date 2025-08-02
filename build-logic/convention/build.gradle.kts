@@ -22,7 +22,13 @@ gradlePlugin {
     plugins {
         register("application") {
             id = libs.plugins.convention.application.get().pluginId
-            implementationClass = "com.playground.convention.plugin.ApplicationConventionPlugin"
+            implementationClass =
+                "com.playground.convention.plugin.foundation.ApplicationConventionPlugin"
+        }
+        register("library") {
+            id = libs.plugins.convention.library.get().pluginId
+            implementationClass =
+                "com.playground.convention.plugin.foundation.LibraryConventionPlugin"
         }
         register("dataLayer") {
             id = libs.plugins.convention.data.get().pluginId

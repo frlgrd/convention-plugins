@@ -1,6 +1,5 @@
 package com.playground.convention.plugin
 
-import com.playground.convention.androidLibrary
 import com.playground.convention.extensions.alias
 import com.playground.convention.extensions.implementation
 import com.playground.convention.extensions.libs
@@ -13,14 +12,11 @@ import org.gradle.kotlin.dsl.dependencies
 class DomainLayerConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         plugins {
-            alias(libs.plugins.android.library)
-            alias(libs.plugins.kotlin.android)
+            alias(libs.plugins.convention.library)
         }
-        androidLibrary {
-            dependencies {
-                implementation(libs.bundles.domain.implementations)
-                testImplementation(libs.bundles.domain.test.implementations)
-            }
+        dependencies {
+            implementation(libs.bundles.domain.implementations)
+            testImplementation(libs.bundles.domain.test.implementations)
         }
     }
 }

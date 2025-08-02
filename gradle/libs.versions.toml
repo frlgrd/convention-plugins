@@ -43,6 +43,7 @@ jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrai
 
 #convention plugins
 convention-application = { id = "com.convention.application" }
+convention-library = { id = "com.convention.library" }
 convention-data = { id = "com.convention.data" }
 convention-domain = { id = "com.convention.domain" }
 convention-presentation = { id = "com.convention.presentation" }

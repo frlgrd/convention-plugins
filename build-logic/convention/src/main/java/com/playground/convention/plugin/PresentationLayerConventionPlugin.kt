@@ -1,6 +1,6 @@
 package com.playground.convention.plugin
 
-import com.playground.convention.androidLibrary
+import com.android.build.api.dsl.LibraryExtension
 import com.playground.convention.configureComposeOptions
 import com.playground.convention.extensions.alias
 import com.playground.convention.extensions.androidTestImplementation
@@ -11,25 +11,25 @@ import com.playground.convention.extensions.plugins
 import com.playground.convention.extensions.testImplementation
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
 
 class PresentationLayerConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         plugins {
-            alias(libs.plugins.android.library)
-            alias(libs.plugins.kotlin.android)
+            alias(libs.plugins.convention.library)
             alias(libs.plugins.kotlin.compose)
         }
-        androidLibrary {
+        extensions.configure<LibraryExtension> {
             configureComposeOptions(this@with)
-            dependencies {
-                implementation(libs.bundles.presentation.implementations)
-                implementation(platform(libs.androidx.compose.bom))
-                testImplementation(libs.bundles.presentation.test.implementations)
-                androidTestImplementation(libs.bundles.presentation.android.test.implementations)
-                androidTestImplementation(platform(libs.androidx.compose.bom))
-                debugImplementation(libs.bundles.presentation.debug.implementations)
-            }
+        }
+        dependencies {
+            implementation(libs.bundles.presentation.implementations)
+            implementation(platform(libs.androidx.compose.bom))
+            testImplementation(libs.bundles.presentation.test.implementations)
+            androidTestImplementation(libs.bundles.presentation.android.test.implementations)
+            androidTestImplementation(platform(libs.androidx.compose.bom))
+            debugImplementation(libs.bundles.presentation.debug.implementations)
         }
     }
 }
