@@ -24,5 +24,18 @@ gradlePlugin {
             id = libs.plugins.convention.application.get().pluginId
             implementationClass = "com.playground.convention.plugin.ApplicationConventionPlugin"
         }
+        create("dataConventionPlugin") {
+            id = libs.plugins.convention.data.get().pluginId
+            implementationClass = "com.playground.convention.plugin.DataLayerConventionPlugin"
+        }
+        create("domainConventionPlugin") {
+            id = libs.plugins.convention.domain.get().pluginId
+            implementationClass = "com.playground.convention.plugin.DomainLayerConventionPlugin"
+        }
+        create("presentationConventionPlugin") {
+            id = libs.plugins.convention.presentation.get().pluginId
+            implementationClass =
+                "com.playground.convention.plugin.PresentationLayerConventionPlugin"
+        }
     }
 }

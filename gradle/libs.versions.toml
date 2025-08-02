@@ -43,9 +43,12 @@ jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrai
 
 #convention plugins
 convention-application = { id = "com.convention.application" }
+convention-data = { id = "com.convention.data" }
+convention-domain = { id = "com.convention.domain" }
+convention-presentation = { id = "com.convention.presentation" }
 
 [bundles]
-#region app-compose
+#region app
 app-implementations = [
     "androidx-core-ktx",
     "androidx-lifecycle-runtime-ktx",
@@ -67,5 +70,25 @@ app-android-test-implementations = [
 app-debug-implementations = [
     "androidx-ui-tooling",
     "androidx-ui-test-manifest",
+]
+#endregion
+
+#region data
+data-implementations = [
+    "androidx-core-ktx",
+    "androidx-appcompat",
+]
+data-test-implementations = [
+    "junit",
+]
+#endregion
+
+#region domain
+domain-implementations = [
+    "androidx-core-ktx",
+    "androidx-appcompat",
+]
+domain-test-implementations = [
+    "junit",
 ]
 #endregion
