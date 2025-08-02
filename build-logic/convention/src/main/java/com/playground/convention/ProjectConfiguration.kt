@@ -23,7 +23,6 @@ fun Project.androidApplication(
             targetSdk = 36
             versionCode = 1
             versionName = "1.0"
-            applicationId = "com.playground"
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         }
         configureCompileOptions(this@androidApplication)

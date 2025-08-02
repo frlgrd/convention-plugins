@@ -3,4 +3,7 @@ plugins {
 }
 android {
     namespace = "com.playground"
+    defaultConfig {
+        applicationId = "com.playground"
+    }
 }
