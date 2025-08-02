@@ -1,8 +1,8 @@
 package com.playground.convention.plugin
 
 import com.playground.convention.androidApplication
+import com.playground.convention.extensions.alias
 import com.playground.convention.extensions.androidTestImplementation
-import com.playground.convention.extensions.apply
 import com.playground.convention.extensions.debugImplementation
 import com.playground.convention.extensions.implementation
 import com.playground.convention.extensions.libs
@@ -15,9 +15,9 @@ import org.gradle.kotlin.dsl.dependencies
 class ApplicationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         plugins {
-            apply(libs.plugins.android.application)
-            apply(libs.plugins.kotlin.android)
-            apply(libs.plugins.kotlin.compose)
+            alias(libs.plugins.android.application)
+            alias(libs.plugins.kotlin.android)
+            alias(libs.plugins.kotlin.compose)
         }
         androidApplication {
             dependencies {
