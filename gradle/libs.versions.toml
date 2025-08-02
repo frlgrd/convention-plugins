@@ -92,3 +92,18 @@ domain-test-implementations = [
     "junit",
 ]
 #endregion
+
+#region presentation
+presentation-implementations = [
+    "androidx-core-ktx",
+    "androidx-lifecycle-runtime-ktx",
+    "androidx-activity-compose",
+    "androidx-ui",
+    "androidx-ui-graphics",
+    "androidx-ui-tooling-preview",
+    "androidx-material3"
+]
+presentation-test-implementations = [
+    "junit",
+]
+#endregion

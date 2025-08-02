@@ -13,6 +13,7 @@ class PresentationLayerConventionPlugin : Plugin<Project> {
         plugins {
             apply(libs.plugins.android.library)
             apply(libs.plugins.kotlin.android)
+            apply(libs.plugins.kotlin.compose)
         }
         configureAndroidLibrary {
             configureComposeOptions(this@with)
