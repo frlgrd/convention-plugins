@@ -21,7 +21,7 @@ val Project.libs get() = extensionOf(target = this, extensionName = "libs") as L
 fun Project.plugins(block: PluginManager.() -> Unit) = pluginManager.block()
 
 fun Project.androidApplication(
-    block: ApplicationExtension.() -> Unit
+    configuration: ApplicationExtension.() -> Unit
 ) = extensions.configure<ApplicationExtension> {
     internalAndroidApplication {
         compileSdk = 36
@@ -44,12 +44,12 @@ fun Project.androidApplication(
                 )
             }
         }
-        block()
+        configuration.invoke(this@configure)
     }
 }
 
 fun Project.androidLibrary(
-    block: LibraryExtension.() -> Unit = {}
+    configuration: LibraryExtension.() -> Unit = {}
 ) = extensions.configure<LibraryExtension> {
     internalAndroidLibrary {
         compileSdk = 36
@@ -59,7 +59,7 @@ fun Project.androidLibrary(
             consumerProguardFiles("consumer-rules.pro")
         }
         configureCompileOptions(this@androidLibrary)
-        block()
+        configuration.invoke(this@configure)
     }
 }
 
