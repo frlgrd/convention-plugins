@@ -1,9 +1,9 @@
 package com.playground.convention.plugin.foundation
 
 import com.android.build.api.dsl.LibraryExtension
-import com.playground.convention.extensions.alias
-import com.playground.convention.extensions.libs
-import com.playground.convention.extensions.plugins
+import com.playground.convention.extension.alias
+import com.playground.convention.extension.libs
+import com.playground.convention.extension.plugins
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project

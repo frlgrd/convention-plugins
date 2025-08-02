@@ -1,4 +1,4 @@
-package com.playground.convention.extensions
+package com.playground.convention.extension
 
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.api.Project
