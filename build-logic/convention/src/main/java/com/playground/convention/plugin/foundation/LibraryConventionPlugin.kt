@@ -18,7 +18,7 @@ class LibraryConventionPlugin : Plugin<Project> {
             alias(libs.plugins.android.library)
             alias(libs.plugins.kotlin.android)
         }
-        extensions.configure<LibraryExtension> {
+        configure<LibraryExtension> {
             defaultConfig {
                 compileSdk = 36
                 defaultConfig {

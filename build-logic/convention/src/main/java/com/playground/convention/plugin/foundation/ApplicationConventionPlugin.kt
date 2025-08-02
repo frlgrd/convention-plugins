@@ -22,54 +22,46 @@ class ApplicationConventionPlugin : Plugin<Project> {
         plugins {
             alias(libs.plugins.android.application)
             alias(libs.plugins.kotlin.android)
-            alias(libs.plugins.kotlin.compose)
+            alias(libs.plugins.convention.compose)
         }
-        configureAndroidApplication()
-    }
-
-    private fun Project.configureAndroidApplication() = extensions.configure<ApplicationExtension> {
-        defaultConfig {
-            compileSdk = 36
+        configure<ApplicationExtension> {
             defaultConfig {
-                minSdk = 24
-                targetSdk = 36
-                testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-            }
-            compileOptions {
-                sourceCompatibility = JavaVersion.VERSION_11
-                targetCompatibility = JavaVersion.VERSION_11
-            }
-            tasks.withType<KotlinCompile>().configureEach {
-                compilerOptions {
-                    jvmTarget.set(JvmTarget.JVM_11)
+                compileSdk = 36
+                defaultConfig {
+                    minSdk = 24
+                    targetSdk = 36
+                    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 }
-            }
-            composeOptions {
-                kotlinCompilerExtensionVersion = libs.versions.agp.get().toString()
-            }
-            buildFeatures {
-                compose = true
-            }
-            buildTypes {
-                getByName("release") {
-                    isMinifyEnabled = false
-                    proguardFiles(
-                        getDefaultProguardFile("proguard-android-optimize.txt"),
-                        "proguard-rules.pro"
-                    )
+                compileOptions {
+                    sourceCompatibility = JavaVersion.VERSION_11
+                    targetCompatibility = JavaVersion.VERSION_11
                 }
-                getByName("debug") {
-                    applicationIdSuffix = ".debug"
-                    isDebuggable = true
+                tasks.withType<KotlinCompile>().configureEach {
+                    compilerOptions {
+                        jvmTarget.set(JvmTarget.JVM_11)
+                    }
                 }
-            }
-            dependencies {
-                implementation(libs.bundles.app.implementations)
-                implementation(platform(libs.androidx.compose.bom))
-                testImplementation(libs.bundles.app.test.implementations)
-                androidTestImplementation(libs.bundles.app.android.test.implementations)
-                androidTestImplementation(platform(libs.androidx.compose.bom))
-                debugImplementation(libs.bundles.app.debug.implementations)
+                buildTypes {
+                    getByName("release") {
+                        isMinifyEnabled = false
+                        proguardFiles(
+                            getDefaultProguardFile("proguard-android-optimize.txt"),
+                            "proguard-rules.pro"
+                        )
+                    }
+                    getByName("debug") {
+                        applicationIdSuffix = ".debug"
+                        isDebuggable = true
+                    }
+                }
+                dependencies {
+                    implementation(libs.bundles.app.implementations)
+                    implementation(platform(libs.androidx.compose.bom))
+                    testImplementation(libs.bundles.app.test.implementations)
+                    androidTestImplementation(libs.bundles.app.android.test.implementations)
+                    androidTestImplementation(platform(libs.androidx.compose.bom))
+                    debugImplementation(libs.bundles.app.debug.implementations)
+                }
             }
         }
     }
