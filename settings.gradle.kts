@@ -24,6 +24,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Playground"
 include(":app")
-include(":feature:login:presention")
+include(":feature:login:presentation")
 include(":feature:login:data")
 include(":feature:login:domain")

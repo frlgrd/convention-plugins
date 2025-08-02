@@ -9,3 +9,6 @@ android {
         versionName = "1.0"
     }
 }
+dependencies {
+    implementation(project(":feature:login:presentation"))
+}
