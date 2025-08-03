@@ -1,0 +1,1 @@
+This is a sample project that focuses on convention plugins and serves as the basis for [this](https://medium.com/@francoislgrd/why-convention-plugins-should-be-the-norm-in-multi-module-android-application-2f700dad630f) article on the topic.
