@@ -1,7 +1,7 @@
 import com.android.build.api.dsl.LibraryExtension
-import extension.alias
-import extension.libs
-import extension.plugins
+import extensions.alias
+import extensions.libs
+import extensions.plugins
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project

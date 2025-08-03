@@ -1,9 +1,9 @@
-import extension.alias
-import extension.featureDomain
-import extension.implementation
-import extension.libs
-import extension.plugins
-import extension.testImplementation
+import extensions.alias
+import extensions.featureDomain
+import extensions.implementation
+import extensions.libs
+import extensions.plugins
+import extensions.testImplementation
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies

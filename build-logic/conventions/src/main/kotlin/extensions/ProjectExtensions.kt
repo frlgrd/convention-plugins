@@ -1,4 +1,4 @@
-package extension
+package extensions
 
 import org.gradle.accessors.dm.LibrariesForLibs
 import org.gradle.api.Project

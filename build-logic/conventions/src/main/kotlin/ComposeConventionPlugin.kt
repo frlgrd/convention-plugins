@@ -1,11 +1,11 @@
 import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.LibraryExtension
 import com.android.build.gradle.internal.dsl.BaseAppModuleExtension
-import extension.alias
-import extension.androidTestImplementation
-import extension.implementation
-import extension.libs
-import extension.plugins
+import extensions.alias
+import extensions.androidTestImplementation
+import extensions.implementation
+import extensions.libs
+import extensions.plugins
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
