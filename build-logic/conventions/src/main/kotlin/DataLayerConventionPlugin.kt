@@ -16,6 +16,7 @@ class DataLayerConventionPlugin : Plugin<Project> {
         dependencies {
             implementation(project(featureDomain))
             implementation(libs.bundles.androidx.implementations)
+            implementation(libs.bundles.retrofit)
             testImplementation(libs.bundles.test.implementations)
         }
     }
