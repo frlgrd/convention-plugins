@@ -1,11 +1,11 @@
-package com.playground.convention.plugin
+package com.playground.conventions.plugin
 
-import com.playground.convention.extension.alias
-import com.playground.convention.extension.featureModule
-import com.playground.convention.extension.implementation
-import com.playground.convention.extension.libs
-import com.playground.convention.extension.plugins
-import com.playground.convention.extension.testImplementation
+import com.playground.conventions.extension.alias
+import com.playground.conventions.extension.domain
+import com.playground.conventions.extension.implementation
+import com.playground.conventions.extension.libs
+import com.playground.conventions.extension.plugins
+import com.playground.conventions.extension.testImplementation
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
@@ -16,7 +16,7 @@ class DataLayerConventionPlugin : Plugin<Project> {
             alias(libs.plugins.convention.library)
         }
         dependencies {
-            implementation(featureModule(module = "domain"))
+            implementation(project(domain))
             implementation(libs.bundles.androidx.implementations)
             testImplementation(libs.bundles.test.implementations)
         }

@@ -1,13 +1,13 @@
-package com.playground.convention.plugin
+package com.playground.conventions.plugin
 
 import com.android.build.api.dsl.ApplicationExtension
-import com.playground.convention.extension.alias
-import com.playground.convention.extension.androidTestImplementation
-import com.playground.convention.extension.debugImplementation
-import com.playground.convention.extension.implementation
-import com.playground.convention.extension.libs
-import com.playground.convention.extension.plugins
-import com.playground.convention.extension.testImplementation
+import com.playground.conventions.extension.alias
+import com.playground.conventions.extension.androidTestImplementation
+import com.playground.conventions.extension.debugImplementation
+import com.playground.conventions.extension.implementation
+import com.playground.conventions.extension.libs
+import com.playground.conventions.extension.plugins
+import com.playground.conventions.extension.testImplementation
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
