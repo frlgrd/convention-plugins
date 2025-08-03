@@ -2,22 +2,8 @@ package extension
 
 import org.gradle.kotlin.dsl.DependencyHandlerScope
 
-fun DependencyHandlerScope.implementation(
-    dependency: Any
-) = "implementation"(dependency)
-
-fun DependencyHandlerScope.testImplementation(
-    dependency: Any
-) = "testImplementation"(dependency)
-
-fun DependencyHandlerScope.androidTestImplementation(
-    dependency: Any
-) = "androidTestImplementation"(dependency)
-
-fun DependencyHandlerScope.debugImplementation(
-    dependency: Any
-) = "debugImplementation"(dependency)
-
-fun DependencyHandlerScope.ksp(
-    dependency: Any
-) = "ksp"(dependency)
+fun DependencyHandlerScope.ksp(id: Any) = "ksp"(id)
+fun DependencyHandlerScope.implementation(id: Any) = "implementation"(id)
+fun DependencyHandlerScope.testImplementation(id: Any) = "testImplementation"(id)
+fun DependencyHandlerScope.debugImplementation(id: Any) = "debugImplementation"(id)
+fun DependencyHandlerScope.androidTestImplementation(id: Any) = "androidTestImplementation"(id)
