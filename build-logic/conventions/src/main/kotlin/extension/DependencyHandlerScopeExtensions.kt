@@ -1,4 +1,4 @@
-package com.playground.conventions.extension
+package extension
 
 import org.gradle.kotlin.dsl.DependencyHandlerScope
 
