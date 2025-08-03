@@ -16,17 +16,19 @@ class ComposeConventionPlugin : Plugin<Project> {
         plugins {
             alias(libs.plugins.kotlin.compose)
         }
-        val isApplicationModule = extensions.findByType(BaseAppModuleExtension::class.java) != null
-        if (isApplicationModule) {
-            configure<BaseAppModuleExtension> { configureCompose(this@with) }
-        } else {
-            configure<LibraryExtension> { configureCompose(this@with) }
-        }
+        configureComposeFor<BaseAppModuleExtension>()
+        configureComposeFor<LibraryExtension>()
 
         dependencies {
             implementation(platform(libs.androidx.compose.bom))
             androidTestImplementation(platform(libs.androidx.compose.bom))
         }
+    }
+}
+
+private inline fun <reified T : CommonExtension<*, *, *, *, *, *>> Project.configureComposeFor() {
+    if (extensions.findByType(T::class.java) != null) {
+        configure<T> { configureCompose(this@configureComposeFor) }
     }
 }
 
