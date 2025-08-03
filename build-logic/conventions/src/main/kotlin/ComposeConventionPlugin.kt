@@ -27,7 +27,8 @@ class ComposeConventionPlugin : Plugin<Project> {
 }
 
 private inline fun <reified T : CommonExtension<*, *, *, *, *, *>> Project.configureComposeFor() {
-    if (extensions.findByType(T::class.java) != null) {
+    val isExtensionAvailable = extensions.findByType(T::class.java) != null
+    if (isExtensionAvailable) {
         configure<T> { configureCompose(this@configureComposeFor) }
     }
 }
