@@ -13,6 +13,9 @@ material = "1.12.0"
 jetbrainsKotlinJvm = "2.2.0"
 runner = "1.7.0"
 mockk = "1.14.5"
+hilt = "2.57"
+ksp = "2.2.0-2.0.2"
+
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -34,22 +37,31 @@ android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", ver
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
 mockk = { group = "io.mock", name = "mockk", version.ref = "mockk" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 #convention plugins
 convention-application = { id = "com.convention.application" }
 convention-library = { id = "com.convention.library" }
 convention-compose = { id = "com.convention.compose" }
+convention-hilt = { id = "com.convention.hilt" }
 convention-data = { id = "com.convention.data" }
 convention-domain = { id = "com.convention.domain" }
 convention-presentation = { id = "com.convention.presentation" }
 
 [bundles]
+hilt = [
+    "hilt-android"
+]
 ui-implementations = [
     "androidx-core-ktx",
     "androidx-lifecycle-runtime-ktx",
@@ -72,6 +84,7 @@ debug-implementations = [
 ]
 test-implementations = [
     "junit",
+    "mockk"
 ]
 androidx-implementations = [
     "androidx-core-ktx",

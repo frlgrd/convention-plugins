@@ -21,6 +21,7 @@ class ApplicationConventionPlugin : Plugin<Project> {
             alias(libs.plugins.android.application)
             alias(libs.plugins.kotlin.android)
             alias(libs.plugins.convention.compose)
+            alias(libs.plugins.convention.hilt)
         }
         configure<ApplicationExtension> {
             defaultConfig {
