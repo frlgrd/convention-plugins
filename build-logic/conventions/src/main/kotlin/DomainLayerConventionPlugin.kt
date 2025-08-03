@@ -10,7 +10,7 @@ import org.gradle.kotlin.dsl.dependencies
 class DomainLayerConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         plugins {
-            alias(libs.plugins.convention.library)
+            alias(libs.plugins.convention.android.library)
         }
         dependencies {
             implementation(libs.bundles.androidx.implementations)

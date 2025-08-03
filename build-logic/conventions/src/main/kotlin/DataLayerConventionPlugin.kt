@@ -11,7 +11,7 @@ import org.gradle.kotlin.dsl.dependencies
 class DataLayerConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
         plugins {
-            alias(libs.plugins.convention.library)
+            alias(libs.plugins.convention.android.library)
         }
         dependencies {
             implementation(project(featureDomain))

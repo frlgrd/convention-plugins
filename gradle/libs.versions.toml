@@ -53,8 +53,8 @@ google-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 
 #convention plugins
-convention-application = { id = "com.convention.application" }
-convention-library = { id = "com.convention.library" }
+convention-android-application = { id = "com.convention.android.application" }
+convention-android-library = { id = "com.convention.android.library" }
 convention-compose = { id = "com.convention.compose" }
 convention-hilt = { id = "com.convention.hilt" }
 convention-data = { id = "com.convention.data" }

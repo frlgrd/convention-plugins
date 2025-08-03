@@ -1,5 +1,5 @@
 plugins {
-    alias(libs.plugins.convention.application)
+    alias(libs.plugins.convention.android.application)
 }
 android {
     namespace = "com.playground"
