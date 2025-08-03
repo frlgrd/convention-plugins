@@ -19,10 +19,8 @@ class PresentationLayerConventionPlugin : Plugin<Project> {
         dependencies {
             implementation(project(featureDomain))
             implementation(libs.bundles.ui.implementations)
-            implementation(platform(libs.androidx.compose.bom))
             testImplementation(libs.bundles.test.implementations)
             androidTestImplementation(libs.bundles.ui.test.implementations)
-            androidTestImplementation(platform(libs.androidx.compose.bom))
             debugImplementation(libs.bundles.debug.implementations)
         }
     }
