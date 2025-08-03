@@ -10,5 +10,5 @@ android {
     }
 }
 dependencies {
-    implementation(project(":feature:login:presentation"))
+    implementation(projects.feature.login.presentation)
 }
