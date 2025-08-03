@@ -1,5 +1,5 @@
 import extension.alias
-import extension.domain
+import extension.featureDomain
 import extension.implementation
 import extension.libs
 import extension.plugins
@@ -14,7 +14,7 @@ class DataLayerConventionPlugin : Plugin<Project> {
             alias(libs.plugins.convention.library)
         }
         dependencies {
-            implementation(project(domain))
+            implementation(project(featureDomain))
             implementation(libs.bundles.androidx.implementations)
             testImplementation(libs.bundles.test.implementations)
         }

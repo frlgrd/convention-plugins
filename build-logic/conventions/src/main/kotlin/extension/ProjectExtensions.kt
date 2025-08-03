@@ -9,5 +9,5 @@ fun Project.plugins(block: PluginManager.() -> Unit) = pluginManager.block()
 
 val Project.libs get() = extensionOf(target = this, extensionName = "libs") as LibrariesForLibs
 
-val Project.domain get() = ":feature:${parent!!.name}:domain"
+val Project.featureDomain get() = ":feature:${parent!!.name}:domain"
 
