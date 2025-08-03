@@ -16,6 +16,7 @@ class ComposeConventionPlugin : Plugin<Project> {
         plugins {
             alias(libs.plugins.kotlin.compose)
         }
+
         configureComposeFor<BaseAppModuleExtension>()
         configureComposeFor<LibraryExtension>()
 
