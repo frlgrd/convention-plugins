@@ -20,15 +20,15 @@ class ComposeConventionPlugin : Plugin<Project> {
             configure<LibraryExtension> { configureCompose(this@with) }
         }
     }
+}
 
-    private fun CommonExtension<*, *, *, *, *, *>.configureCompose(
-        project: Project
-    ) = with(project) {
-        composeOptions {
-            kotlinCompilerExtensionVersion = libs.versions.agp.get().toString()
-        }
-        buildFeatures {
-            compose = true
-        }
+private fun CommonExtension<*, *, *, *, *, *>.configureCompose(
+    project: Project
+) = with(project) {
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.agp.get().toString()
+    }
+    buildFeatures {
+        compose = true
     }
 }
