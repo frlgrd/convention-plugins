@@ -17,7 +17,6 @@ class PresentationLayerConventionPlugin : Plugin<Project> {
             alias(libs.plugins.convention.compose)
         }
         dependencies {
-            println("domain = $featureDomain")
             implementation(project(featureDomain))
             implementation(libs.bundles.ui.implementations)
             implementation(platform(libs.androidx.compose.bom))
