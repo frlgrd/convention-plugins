@@ -29,17 +29,13 @@ class ComposeConventionPlugin : Plugin<Project> {
 private inline fun <reified T : CommonExtension<*, *, *, *, *, *>> Project.configureComposeFor() {
     val isExtensionAvailable = extensions.findByType(T::class.java) != null
     if (isExtensionAvailable) {
-        configure<T> { configureCompose(this@configureComposeFor) }
-    }
-}
-
-private fun CommonExtension<*, *, *, *, *, *>.configureCompose(
-    project: Project
-) = with(project) {
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.agp.get().toString()
-    }
-    buildFeatures {
-        compose = true
+        configure<T> {
+            composeOptions {
+                kotlinCompilerExtensionVersion = libs.versions.agp.get().toString()
+            }
+            buildFeatures {
+                compose = true
+            }
+        }
     }
 }
