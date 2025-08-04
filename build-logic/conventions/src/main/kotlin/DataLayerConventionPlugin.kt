@@ -3,7 +3,6 @@ import extensions.featureDomain
 import extensions.implementation
 import extensions.libs
 import extensions.plugins
-import extensions.testImplementation
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
@@ -15,9 +14,8 @@ class DataLayerConventionPlugin : Plugin<Project> {
         }
         dependencies {
             implementation(project(featureDomain))
-            implementation(libs.bundles.androidx.implementations)
-            implementation(libs.bundles.data.api)
-            testImplementation(libs.bundles.test.implementations)
+            implementation(libs.bundles.data.room)
+            implementation(libs.bundles.data.retrofit)
         }
     }
 }

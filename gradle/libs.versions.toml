@@ -16,6 +16,7 @@ mockk = "1.14.5"
 hilt = "2.57"
 ksp = "2.2.0-2.0.2"
 retrofit = "3.0.0"
+room = "2.7.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -42,7 +43,10 @@ hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
-
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-extensions = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -65,7 +69,12 @@ convention-presentation = { id = "com.convention.presentation" }
 hilt = [
     "hilt-android"
 ]
-data-api = [
+data-room = [
+    "room-runtime",
+    "room-extensions",
+    "room-testing"
+]
+data-retrofit = [
     "retrofit",
     "gson"
 ]
