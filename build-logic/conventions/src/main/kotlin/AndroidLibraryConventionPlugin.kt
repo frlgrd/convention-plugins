@@ -1,6 +1,6 @@
-
 import com.android.build.api.dsl.LibraryExtension
 import extensions.alias
+import extensions.implementation
 import extensions.libs
 import extensions.plugins
 import extensions.testImplementation
@@ -40,6 +40,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             }
         }
         dependencies {
+            implementation(libs.bundles.androidx.implementations)
             testImplementation(libs.bundles.test.implementations)
         }
     }
