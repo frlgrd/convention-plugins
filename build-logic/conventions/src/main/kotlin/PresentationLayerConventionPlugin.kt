@@ -1,7 +1,7 @@
 import extensions.alias
 import extensions.androidTestImplementation
 import extensions.debugImplementation
-import extensions.featureDomain
+import extensions.featureDomainModule
 import extensions.implementation
 import extensions.libs
 import extensions.plugins
@@ -16,7 +16,7 @@ class PresentationLayerConventionPlugin : Plugin<Project> {
             alias(libs.plugins.convention.compose)
         }
         dependencies {
-            implementation(project(featureDomain))
+            implementation(featureDomainModule)
             implementation(libs.bundles.ui.implementations)
             androidTestImplementation(libs.bundles.ui.test.implementations)
             debugImplementation(libs.bundles.debug.implementations)
