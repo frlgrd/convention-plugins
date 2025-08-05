@@ -1,6 +1,7 @@
 import com.android.build.api.dsl.LibraryExtension
 import extensions.alias
 import extensions.implementation
+import extensions.int
 import extensions.libs
 import extensions.plugins
 import extensions.testImplementation
@@ -22,9 +23,9 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
         }
         configure<LibraryExtension> {
             defaultConfig {
-                compileSdk = 36
+                compileSdk = libs.versions.compileSdk.int()
                 defaultConfig {
-                    minSdk = 24
+                    minSdk = libs.versions.minSdk.int()
                     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                     consumerProguardFiles("consumer-rules.pro")
                 }

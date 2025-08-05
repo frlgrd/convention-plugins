@@ -3,6 +3,7 @@ import extensions.alias
 import extensions.androidTestImplementation
 import extensions.debugImplementation
 import extensions.implementation
+import extensions.int
 import extensions.libs
 import extensions.plugins
 import extensions.testImplementation
@@ -25,10 +26,10 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
         }
         configure<ApplicationExtension> {
             defaultConfig {
-                compileSdk = 36
+                compileSdk = libs.versions.compileSdk.int()
                 defaultConfig {
-                    minSdk = 24
-                    targetSdk = 36
+                    targetSdk = libs.versions.targetSdk.int()
+                    minSdk = libs.versions.minSdk.int()
                     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 }
                 compileOptions {
