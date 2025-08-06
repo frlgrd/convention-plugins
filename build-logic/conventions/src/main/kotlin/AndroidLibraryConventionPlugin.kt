@@ -3,6 +3,7 @@ import extensions.alias
 import extensions.implementation
 import extensions.int
 import extensions.libs
+import extensions.namespace
 import extensions.plugins
 import extensions.testImplementation
 import org.gradle.api.JavaVersion
@@ -22,6 +23,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             alias(libs.plugins.convention.hilt)
         }
         configure<LibraryExtension> {
+            namespace = this@with.namespace
             defaultConfig {
                 compileSdk = libs.versions.compileSdk.int()
                 defaultConfig {
