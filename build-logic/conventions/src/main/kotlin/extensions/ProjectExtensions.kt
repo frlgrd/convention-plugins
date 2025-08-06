@@ -12,5 +12,3 @@ val Project.libs get() = extensionOf(target = this, extensionName = "libs") as L
 val Project.featureDomainModule: Project
     get() = requireNotNull(parent).allprojects.first { it.name.contains("domain") }
 
-val Project.namespace: String get() = "com.$group.$name".lowercase()
-
