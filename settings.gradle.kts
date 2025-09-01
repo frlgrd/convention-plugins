@@ -1,8 +1,5 @@
 @file:Suppress("UnstableApiUsage")
 
-include(":core:design")
-
-
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 pluginManagement {
     includeBuild("build-logic")
@@ -31,3 +28,4 @@ include(":app")
 include(":feature:login:presentation")
 include(":feature:login:data")
 include(":feature:login:domain")
+include(":core:design")
